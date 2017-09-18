@@ -21,19 +21,7 @@ is the 3's place, the third to last is the 9's place, etc.
 If your language provides a method in the standard library to perform the
 conversion, pretend it doesn't exist and implement it yourself.
 
-### Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `exercism/python/<exerciseName>` directory.
-
-For example, if you're submitting `bob.py` for the Bob exercise, the submit command would be something like `exercism submit <path_to_exercism_dir>/python/bob/bob.py`.
-
-
-For more detailed information about running tests, code style and linting,
-please see the [help page](http://exercism.io/languages/python).
-
 ## Source
 
 All of Computer Science [http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-](http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-)
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
