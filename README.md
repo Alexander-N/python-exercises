@@ -23,4 +23,8 @@ exercise you like to solve. Let's say you select `hello-world`.
     ```
     python3 test.py
     ```
+    It is also possible to run one test at a time, e.g.
+    ```
+    python3 test.py HelloWorldTests.test_hello
+    ```
 5. You can compare your solution to the one in `solution.py`
