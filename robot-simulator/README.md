@@ -27,6 +27,8 @@ direction it is pointing.
 - Say a robot starts at {7, 3} facing north. Then running this stream
   of instructions should leave it at {9, 4} facing west.
 
+Optionally, you can visualize the robot trajectory with the [turtle module](https://docs.python.org/3/library/turtle.html).
+
 ## Source
 
 Inspired by an interview question at a famous company.
