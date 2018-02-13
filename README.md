@@ -27,7 +27,7 @@ as straightforward as possible. You don't need to install anything other than Py
    ```
    python3 test.py
    ```
-   It is also possible to run one test at a time, e.g.
+   It is also possible to run a specific test, e.g.
    ```
    python3 test.py HelloWorldTests.test_hello
    ```
