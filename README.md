@@ -31,10 +31,5 @@ as straightforward as possible. You don't need to install anything other than Py
    ```
    python3 test.py HelloWorldTests.test_hello
    ```
-   or
-   ```
-   python3 test.py -f
-   ```
-   to stop when the first test fails.
 5. Compare your solution to the one in `solution.py`
 6. You can make a pull request to share your solution.

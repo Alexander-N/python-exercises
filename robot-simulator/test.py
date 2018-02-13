@@ -77,4 +77,4 @@ if __name__ == '__main__':
     line_compare = lambda a, b: get_line_number(a) - get_line_number(b)
     loader.sortTestMethodsUsing = line_compare
 
-    unittest.main(testLoader=loader)
+    unittest.main(testLoader=loader, failfast=True)
