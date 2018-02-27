@@ -1,10 +1,17 @@
-from functools import reduce
+_hex_code = dict(zip('0123456789', range(10)))
+_hex_code.update(zip('abcdef', range(10, 16)))
+_hex_code.update(zip('ABCDEFG', range(10, 16)))
 
 
 def hexa(s):
-    s = s.lower()
-    if set(s) - set('0123456789abcdef'):
+    result = 0
+    c = None
+    try:
+        for c in s:
+            result = result*16 + _hex_code[c]
+    except KeyError:
+        c = None
+    if c is None:
+        # s was empty or triggered KeyError
         raise ValueError('Invalid hexadecimal string')
-    l = [ord(c) - ord('a') + 10 if c in 'abcdef' else ord(c) - ord('0')
-         for c in s]
-    return reduce(lambda x, y: x * 16 + y, l, 0)
+    return result
