@@ -1,10 +1,15 @@
 from functools import reduce
 
 
-def hexa(s):
-    s = s.lower()
-    if not s or set(s) - set('0123456789abcdef'):
+valid_hexchars = set('0123456789abcdef')
+
+
+def hexa(hexstring):
+    s = hexstring.lower()
+    if not s or set(s) - valid_hexchars:
         raise ValueError('Invalid hexadecimal string')
-    l = [ord(c) - ord('a') + 10 if c in 'abcdef' else ord(c) - ord('0')
-         for c in s]
-    return reduce(lambda x, y: x * 16 + y, l, 0)
+    hexchars_as_ints = [
+        ord(c) - ord('a') + 10 if c in 'abcdef' else ord(c) - ord('0')
+        for c in s
+        ]
+    return reduce(lambda x, y: x * 16 + y, hexchars_as_ints, 0)

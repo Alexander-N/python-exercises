@@ -38,6 +38,10 @@ class HexadecimalTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             hexa('carrot')
 
+    def test_invalid_empty_string(self):
+        with self.assertRaises(ValueError):
+            hexa('')
+
 
 if __name__ == '__main__':
     unittest.main()

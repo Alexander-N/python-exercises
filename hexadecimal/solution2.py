@@ -1,22 +1,24 @@
 # An alternative solution emphasizing EAFP instead of LBYL
 # (see https://docs.python.org/glossary.html#term-eafp)
 # With no checks performed on the input, this solution is rather fast -
-# though still much slower, of course, then the built-in int(s, base=16).
-
-hexdigits_to_int = dict(zip('0123456789', range(10)))
-hexdigits_to_int.update(zip('abcdef', range(10, 16)))
-hexdigits_to_int.update(zip('ABCDEFG', range(10, 16)))
+# though still slower than the built-in int(hexstring, base=16), of course.
 
 
-def hexa(s):
+hexchars_to_int = dict(zip('0123456789', range(10)))
+hexchars_to_int.update(zip('abcdef', range(10, 16)))
+hexchars_to_int.update(zip('ABCDEFG', range(10, 16)))
+
+
+def hexa(hexstring):
     result = 0
-    c = None
+    hex_of_lastseen = None
     try:
-        for c in s:
-            result = result*16 + hexdigits_to_int[c]
+        for hex_of_lastseen in hexstring:
+            result = result*16 + hexchars_to_int[hex_of_lastseen]
     except KeyError:
-        c = None
-    if c is None:
-        # s was empty or triggered KeyError
+        # not a valid hexchar
+        hex_of_lastseen = None
+    if hex_of_lastseen is None:
+        # hexstring was empty or triggered KeyError
         raise ValueError('Invalid hexadecimal string')
     return result
