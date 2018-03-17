@@ -44,7 +44,7 @@ class RobotTests(unittest.TestCase):
         self.assertEqual(robot.coordinates, (0, -1))
         self.assertEqual(robot.bearing, SOUTH)
 
-    def test_advance_positive_west(self):
+    def test_advance_negative_west(self):
         robot = Robot(WEST, 0, 0)
         robot.advance()
         self.assertEqual(robot.coordinates, (-1, 0))
@@ -68,6 +68,9 @@ class RobotTests(unittest.TestCase):
         self.assertEqual(robot.coordinates, (11, 5))
         self.assertEqual(robot.bearing, NORTH)
 
+    def test_raises_bad_direction(self):
+        robot = Robot(SOUTH, 8, 4)
+        self.assertRaises(Exception, robot.simulate, "LAA12")
 
 if __name__ == '__main__':
     # Sort test methods by order of definition
