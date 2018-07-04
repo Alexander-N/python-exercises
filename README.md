@@ -19,7 +19,7 @@ as straightforward as possible. You don't need to install anything other than Py
 
 3. Change into the directory of your exercise
    ```
-   cd python-exercises/hello-world
+   cd python-exercises/exercises/hello-world
    ```
 4. Edit `hello_world.py` to solve the exercise. Look at README.md and test.py
    to find out what to do.
