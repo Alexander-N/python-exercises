@@ -8,9 +8,9 @@ Python.
 
 ## Choosing an exercise
 
-To help you select an exercise you can use this [list](difficulties.md) where
-they are ordered by approximate difficulty. Just browse through the exercises
-and read the descriptions until you find a problem which interests you.
+To select an exercise you can use this [list](difficulties.md) where they are
+ordered very roughly by difficulty. Just browse through the exercises and read
+the descriptions until you find a problem which interests you.
 
 ## Get started
 
