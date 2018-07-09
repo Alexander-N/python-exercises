@@ -35,7 +35,7 @@ the descriptions until you find a problem which interests you.
 * You can make a pull request to share your solution.
 
 ## Tips
-For a better testing experience, you can use
+For a better testing experience, use
 [pytest](https://docs.pytest.org/). If you don't want to use a virtualenv, you
 can install it globally
 ```
@@ -43,5 +43,6 @@ sudo pip3 install pytest
 ```
 Run the tests with 
 ```
-pytest test.py
+python3 -m pytest test.py
 ```
+Add the `-x` option to stop running tests on first failure.
