@@ -191,6 +191,24 @@ class ReactTest(unittest.TestCase):
         input_.value = 5
         self.assertEqual(observer, [])
 
+    def test_omar(self):
+        input1 = InputCell(1)
+        input2 = InputCell(1)
+        cc = ComputeCell(
+            [input1, input2],
+            lambda inputs: inputs[0] + inputs[1]
+        )
+
+        observer = []
+        callback1 = self.callback_factory(observer)
+
+        cc.add_callback(callback1)
+        input1.value = 2
+        input1.value = 3
+        input2.value = 4
+        self.assertEqual(observer, [3, 4, 7])
+
+
     # Utility functions.
     def callback_factory(self, observer):
         def callback(observer, value):
