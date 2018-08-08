@@ -24,27 +24,40 @@ class ComputeCell(object):
         self.inputs = inputs
         self.compute_function = compute_function
         self._observers = []
+        self._callbacks = []
+        self._value = None
+
         self.update()
 
     def add_observer(self, obs):
         self._observers.append(obs)
 
     def add_callback(self, callback):
-        pass
+        self._callbacks.append(callback)
 
     def remove_callback(self, callback):
-        pass
+        try:
+            self._callbacks.remove(callback)
+        except ValueError:
+            pass
 
     def expect_callback_values(self, callback):
         pass
 
     def update(self):
+        old_value = self._value
         inputs = self.inputs
         compute_function = self.compute_function
+
         self._value = compute_function([input.value for input in inputs])
+        if self._value == old_value:
+            return
+
         for obs in self._observers:
             obs.update()
-        # self.callback(self._value)
+
+        for cb in self._callbacks:
+            cb(self._value)
 
     @property
     def value(self):
